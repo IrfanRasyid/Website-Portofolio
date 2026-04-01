@@ -1,7 +1,7 @@
-import React, { useState, useEffect, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useTransform, useInView } from 'framer-motion';
 import {
-  Mail, Phone, MapPin, ExternalLink, Briefcase,
+  Mail, Phone, MapPin, ExternalLink,
   GraduationCap, Code, Database, BarChart, Menu, X,
 } from 'lucide-react';
 
