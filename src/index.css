@@ -1,0 +1,297 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Barlow+Condensed:ital,wght@0,600;0,700;0,800;0,900;1,700&display=swap');
+
+/* ═══════════════════════════════════════════════════════════
+   DESIGN TOKENS
+═══════════════════════════════════════════════════════════ */
+:root {
+  --bg:          #EBEBEB;
+  --bg-white:    #FFFFFF;
+  --bg-dark:     #0D0D0D;
+  --text:        #0D0D0D;
+  --text-mid:    #333333;
+  --text-muted:  #888888;
+  --orange:      #FF6B00;
+  --orange-dark: #E05500;
+  --border:      rgba(0,0,0,0.10);
+  --border-mid:  rgba(0,0,0,0.18);
+  --border-dark: rgba(0,0,0,0.35);
+  --grid-size:   80px;
+  --nav-h:       60px;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   BASE RESET
+═══════════════════════════════════════════════════════════ */
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; font-size: 16px; }
+body {
+  font-family: 'Space Grotesk', sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+}
+img, svg { display: block; }
+a { text-decoration: none; color: inherit; }
+button { font-family: inherit; cursor: pointer; border: none; background: none; }
+
+/* ═══════════════════════════════════════════════════════════
+   GRID BACKGROUND
+═══════════════════════════════════════════════════════════ */
+.grid-bg {
+  background-color: var(--bg);
+  background-image:
+    linear-gradient(var(--border) 1px, transparent 1px),
+    linear-gradient(90deg, var(--border) 1px, transparent 1px);
+  background-size: var(--grid-size) var(--grid-size);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   TYPOGRAPHY
+═══════════════════════════════════════════════════════════ */
+.display-font { font-family: 'Barlow Condensed', sans-serif; }
+
+.hero-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 900;
+  text-transform: uppercase;
+  letter-spacing: -0.02em;
+  line-height: 0.88;
+  color: var(--text);
+}
+
+.section-title {
+  font-family: 'Barlow Condensed', sans-serif;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: -0.01em;
+  line-height: 1;
+  color: var(--text);
+}
+
+.gradient-text {
+  background: linear-gradient(135deg, var(--orange), #ff9a00);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   ORANGE ACCENT DECORATORS
+═══════════════════════════════════════════════════════════ */
+.orange-sq {
+  width: 10px;
+  height: 10px;
+  background: var(--orange);
+  display: inline-block;
+  flex-shrink: 0;
+}
+
+.corner-dot {
+  position: absolute;
+  width: 9px;
+  height: 9px;
+  background: var(--orange);
+}
+.corner-dot.tl { top: -1px; left: -1px; }
+.corner-dot.tr { top: -1px; right: -1px; }
+.corner-dot.bl { bottom: -1px; left: -1px; }
+.corner-dot.br { bottom: -1px; right: -1px; }
+
+/* ═══════════════════════════════════════════════════════════
+   BUTTONS
+═══════════════════════════════════════════════════════════ */
+.btn-orange {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: var(--orange);
+  color: #fff;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  transition: background 0.2s, transform 0.15s;
+}
+.btn-orange:hover { background: var(--orange-dark); transform: translateY(-1px); }
+.btn-orange:active { transform: translateY(0); }
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 22px;
+  background: transparent;
+  color: var(--text);
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 700;
+  font-size: 11px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  border: 1px solid var(--border-dark);
+  transition: border-color 0.2s, color 0.2s, transform 0.15s;
+}
+.btn-outline:hover { border-color: var(--orange); color: var(--orange); transform: translateY(-1px); }
+
+/* ═══════════════════════════════════════════════════════════
+   NAV
+═══════════════════════════════════════════════════════════ */
+.nav-link {
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-mid);
+  letter-spacing: 0.02em;
+  transition: color 0.2s;
+  position: relative;
+  white-space: nowrap;
+}
+.nav-link:hover, .nav-link.active { color: var(--orange); }
+
+/* ═══════════════════════════════════════════════════════════
+   SECTION TAG  (small label above titles)
+═══════════════════════════════════════════════════════════ */
+.section-tag {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+}
+
+/* ═══════════════════════════════════════════════════════════
+   CARDS
+═══════════════════════════════════════════════════════════ */
+.card {
+  background: var(--bg-white);
+  border: 1px solid var(--border-mid);
+  position: relative;
+}
+.card-dark {
+  background: var(--bg-dark);
+  border: 1px solid var(--bg-dark);
+  color: #fff;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKILL BAR
+═══════════════════════════════════════════════════════════ */
+.skill-track {
+  height: 2px;
+  background: var(--border-mid);
+  overflow: hidden;
+  margin-top: 8px;
+}
+.skill-fill {
+  height: 100%;
+  background: var(--orange);
+  transform-origin: left;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SKELETON
+═══════════════════════════════════════════════════════════ */
+@keyframes shimmer {
+  0%   { background-position: -400% 0; }
+  100% { background-position:  400% 0; }
+}
+.skeleton {
+  background: linear-gradient(90deg, #d8d8d8 25%, #e8e8e8 50%, #d8d8d8 75%);
+  background-size: 400% 100%;
+  animation: shimmer 1.6s infinite;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   SCROLLBAR
+═══════════════════════════════════════════════════════════ */
+::-webkit-scrollbar { width: 4px; }
+::-webkit-scrollbar-track { background: var(--bg); }
+::-webkit-scrollbar-thumb { background: var(--border-dark); border-radius: 2px; }
+::-webkit-scrollbar-thumb:hover { background: var(--orange); }
+
+/* ═══════════════════════════════════════════════════════════
+   UTILITIES
+═══════════════════════════════════════════════════════════ */
+.divider { width: 100%; height: 1px; background: var(--border-mid); }
+.divider-v { width: 1px; background: var(--border-mid); }
+
+.hover-orange { transition: color 0.2s; }
+.hover-orange:hover { color: var(--orange); }
+
+/* ═══════════════════════════════════════════════════════════
+   ANIMATIONS
+═══════════════════════════════════════════════════════════ */
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+@keyframes marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+.marquee-track { animation: marquee 22s linear infinite; }
+
+/* ═══════════════════════════════════════════════════════════
+   PROJECT CARD FLIP / HOVER
+═══════════════════════════════════════════════════════════ */
+.proj-card {
+  position: relative;
+  background: var(--bg-white);
+  border: 1px solid var(--border-mid);
+  transition: border-color 0.2s, box-shadow 0.2s;
+  overflow: hidden;
+}
+.proj-card:hover {
+  border-color: var(--orange);
+  box-shadow: 4px 4px 0 var(--orange);
+}
+.proj-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0;
+  width: 3px;
+  height: 0;
+  background: var(--orange);
+  transition: height 0.3s ease;
+}
+.proj-card:hover::before { height: 100%; }
+
+/* ═══════════════════════════════════════════════════════════
+   EXPERIENCE TIMELINE
+═══════════════════════════════════════════════════════════ */
+.exp-line {
+  position: absolute;
+  left: 7px;
+  top: 16px;
+  bottom: -24px;
+  width: 1px;
+  background: var(--border-mid);
+}
+.exp-dot {
+  width: 15px;
+  height: 15px;
+  background: var(--orange);
+  position: relative;
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+/* ═══════════════════════════════════════════════════════════
+   HEADER PROGRESS BAR
+═══════════════════════════════════════════════════════════ */
+.read-progress {
+  position: fixed;
+  top: 0; left: 0;
+  height: 2px;
+  background: var(--orange);
+  z-index: 100;
+  transform-origin: left;
+}
