@@ -897,7 +897,7 @@ export default function App() {
           <div style={{ maxWidth: 1200, margin: '0 auto', display: 'flex', flexWrap: 'wrap', borderBottom: '1px solid rgba(255,255,255,0.08)' }}>
             {[
               { icon: <Mail size={16} />, label: 'EMAIL', value: 'ir16151@gmail.com', href: 'mailto:ir16151@gmail.com' },
-              { icon: <Phone size={16} />, label: 'PHONE', value: '+62 851-5680-2044', href: 'tel:+6285156802044' },
+              { icon: <Phone size={16} />, label: 'PHONE', value: '+62 878-8360-4232', href: 'tel:+628883604232' },
               { icon: <MapPin size={16} />, label: 'LOCATION', value: 'Jakarta, Indonesia', href: '#' },
             ].map(({ icon, label, value, href }, i) => (
               <a key={i} href={href}
